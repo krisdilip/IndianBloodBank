@@ -1,0 +1,24 @@
+<ion-view view-title="Indian Blood Banks">
+	<div class="bar bar-subheader item-input-inset bar-assertive">
+		<label class="item-input-wrapper">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="query.state">
+		</label>
+	</div>
+
+	<ion-content class="has-subheader" >
+		<ion-list>
+			<!--
+			<ion-item ng-repeat="data in statesData" href="{{data.href}}">
+				<h2>{{data.state}}</h2>
+				<p>{{data.total}} blood banks</p>
+			</ion-item>
+			-->
+			<a class="item item-avatar" ng-repeat="data in statesData | filter:query" href="{{data.href}}">
+			  <img src="./img/Blood_Drop_bigger.png">
+			  <h2>{{data.state}}</h2>
+			  <p>{{data.total}} blood banks</p>
+			</a>			
+		<ion-list>
+	</ion-content>
+</ion-view>

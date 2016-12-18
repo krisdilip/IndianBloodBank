@@ -1,0 +1,19 @@
+<ion-view view-title="{{districtData.state}}">
+	<div class="bar bar-subheader item-input-inset bar-assertive">
+		<label class="item-input-wrapper">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="query.district">
+		</label>
+	</div>
+
+	<ion-content class="has-subheader">
+		<ion-list>
+			<a class="item item-avatar" ng-repeat="data in districtData.districts | filter:query" href="{{data.href}}">
+				<img src="./img/bloodbank.png">
+				<h2>{{data.district}}</h2>				
+			    <p ng-hide="{{data.banks.length}}==1">{{data.banks.length}} blood banks</p>
+				<p ng-hide="{{data.banks.length}}!=1">{{data.banks.length}} blood bank</p>
+			</a>
+		<ion-list>
+	</ion-content>
+</ion-view>

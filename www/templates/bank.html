@@ -1,0 +1,17 @@
+<ion-view view-title="{{bankData.district}}">
+	<ion-content>
+		<div class="list">
+			<a class="item item-text-wrap" ng-repeat="data in bankData.banks">
+				<h2 ng-hide=fn_hide("{{data.name}}")> <i class="icon-sized ion-ios-medkit"> </i>{{data.name}}</h2>
+				<h2 ng-hide=fn_hide("{{data.address}}")> <i class="icon-sized ion-ios-home"> </i> {{data.address}} 
+				<span ng-hide=fn_hide("{{data.pincode}}")> , Pin - {{data.pincode}}</span> </h2>
+				<div ng-repeat="phNo in fn_SplitTelNo(data.contact[0])">
+					<p class="item-icon-right" ng-hide=fn_hide("{{phNo}}") ng-click=fn_Dial("{{phNo}}")> 
+					  <i class="icon-sized ion-ios-telephone"> </i> {{phNo}}
+					</p>					
+				</div>
+				<h2 ng-hide=fn_hide("{{data.website}}") ng-click=fn_open_url("{{data.website}}")> <i class="icon-sized ion-ios-world"> </i> {{data.website}}</h2>			
+			</a>
+		</div>
+	</ion-content>
+</ion-view>
